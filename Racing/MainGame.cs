@@ -20,7 +20,7 @@ namespace Racing
 
             while (true)// 반복
             {
-                currentTick = System.Environment.TickCount; // 현재 시간
+                currentTick = System.Environment.TickCount & Int32.MaxValue; // 현재 시간
                 if (currentTick - lastTick < waitTick)
                 {
                     continue; // 경과 시간이 1 / 30 초 보다 작다면 실행 건너뜀

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Downloads\\Racing_GameOver\\Racing\\Racing.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Downloads\\Console_Racing\\Racing\\Racing.csproj",
       "projectName": "Racing",
-      "projectPath": "C:\\Users\\User\\Downloads\\Racing_GameOver\\Racing\\Racing.csproj",
+      "projectPath": "C:\\Users\\User\\Downloads\\Console_Racing\\Racing\\Racing.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Downloads\\Racing_GameOver\\Racing\\obj\\",
+      "outputPath": "C:\\Users\\User\\Downloads\\Console_Racing\\Racing\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
