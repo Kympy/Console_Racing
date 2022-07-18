@@ -75,11 +75,11 @@ namespace Racing
         {
             return score;
         }
-        public void PlusScore()
+        public void PlusScore() // 점수 더하기
         {
             score++;
         }
-        public void ResetScore()
+        public void ResetScore() // 점수 초기화
         {
             score = 0;
         }

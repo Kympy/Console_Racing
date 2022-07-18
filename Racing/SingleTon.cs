@@ -15,11 +15,11 @@ namespace Racing
         {
             get
             {
-                lock(_lock)
+                lock(_lock) // 멀티 safe
                 {
-                    if (instance == null)
+                    if (instance == null) // 없으면
                     {
-                        instance = new T(); // 제네릭으로 매니저 사용
+                        instance = new T(); // 생성
                     }
                     return instance;
                 }

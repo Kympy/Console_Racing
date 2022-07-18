@@ -26,26 +26,26 @@ namespace Racing
         {
             width = GameManager.Instance._settings.GetWidth();
             height = GameManager.Instance._settings.GetHeight();
-            playerPos = width / 2;
-            pixel = new char[height, width];
-            size = 30;
-            obstacleX = new int[size];
-            itemX = new int[size];
+            playerPos = width / 2; // 플레이어는 중앙에 위치
+            pixel = new char[height, width]; // 화면 크기만큼 배열 생성
+            size = 30; // 장애물 아이템의 공간 크기
+            obstacleX = new int[size]; // 장애물 좌표
+            itemX = new int[size]; // 아이템 좌표
             invincibleX = new int[size];
             obstacleY = new int[size];
             itemY = new int[size];
             invincibleY = new int[size];
-            MakeObstacle();
-            MakeItem();
-            MakeInvincible();
+            MakeObstacle(); // 장애물 생성
+            MakeItem(); // 아이템 생성
+            MakeInvincible(); // 무적 아이템 생성
         }
 
-        public void DrawTile()
+        public void DrawTile() // 화면 그리기
         {
             Console.CursorVisible = false;
-            Console.SetCursorPosition(0, 0);
+            Console.SetCursorPosition(0, 0); // 커서 초기화
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Score : " + GameManager.Instance.GetScore());
+            Console.WriteLine("Score : " + GameManager.Instance.GetScore()); // 점수 그리기
             Console.ResetColor();
             for (int i = 0; i < height; i++)
             {
@@ -53,7 +53,7 @@ namespace Racing
                 {
                     if (CheckObstacle(i,j)) // 장애물
                     {
-                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Black; // 색상 지정
                         Console.BackgroundColor = ConsoleColor.Gray;
                         pixel[i, j] = '■';
                         Console.Write(pixel[i, j]);
@@ -282,17 +282,17 @@ namespace Racing
         }
         private bool CheckPlayerDead() // 플레이어 충돌 판정
         {
-            if(GameManager.Instance.invincibleFrame > 0)
+            if(GameManager.Instance.invincibleFrame > 0) // 무적아이템이 적용중이라면
             {
                 return false;
             }
-            if(GameManager.Instance.GAMEOVER)
+            if(GameManager.Instance.GAMEOVER) // 게임 오버라면
             {
                 return true;
             }
-            for (int k = 0; k < size; k++)
+            for (int k = 0; k < size; k++) // 
             {
-                if (playerPos == obstacleY[k] && height - 1 == obstacleX[k])
+                if (playerPos == obstacleY[k] && height - 1 == obstacleX[k]) //플레이어 위치가 장애물
                 {
                     return true;
                 }
